@@ -1,9 +1,11 @@
 from flask import Flask, render_template_string
+from datetime import datetime
+
 app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return render_template_string("<h1> hello, world </h1>")
+    return render_template_string(f"<h1> The time is: {datetime.now()} </h1>")
 
 
 if __name__ == "__main__": 
