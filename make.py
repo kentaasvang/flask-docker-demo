@@ -1,7 +1,9 @@
 from os import system
 
+
 def build():
-    system("docker build -t flask-app .")
+    system("docker-compose build")
+
 
 def run():
-    system("docker run -p 5000:5000 flask-app")
+    system("docker-compose up --build")
