@@ -37,13 +37,14 @@ HTML = """
             crossorigin="anonymous">
         </script>
     </body>
-</html>""".format(datetime.now())
+</html>"""
 
 app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return render_template_string(HTML)
+    now = datetime.now()
+    return render_template_string(HTML.format(now))
 
 
 if __name__ == "__main__": 
